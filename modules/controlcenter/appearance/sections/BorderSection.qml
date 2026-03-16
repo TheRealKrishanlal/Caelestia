@@ -62,6 +62,10 @@ CollapsibleSection {
             onValueModified: newValue => {
                 rootPane.borderThickness = newValue;
                 rootPane.saveConfig();
+                if(newValue < 2){
+                    SliderInput.label = qsTr("Bruh");
+                    rootPane.saveConfig();
+                }
             }
         }
     }
