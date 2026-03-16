@@ -1,3 +1,4 @@
+import qs.components
 import qs.components.effects
 import qs.services
 import qs.config
@@ -10,6 +11,9 @@ Item {
     
     implicitWidth: Appearance.font.size.large * 1.2
     implicitHeight: Appearance.font.size.large * 1.2
+
+    implicitWidth: Math.round(Appearance.font.size.large * 1.2)
+    implicitHeight: Math.round(Appearance.font.size.large * 1.2)
 
     MouseArea {
         anchors.fill: parent
