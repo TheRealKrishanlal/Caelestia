@@ -21,6 +21,7 @@ ColumnLayout {
     property int decimals: 1 // Number of decimal places to show (default: 1)
     property var formatValueFunction: null // Optional custom format function
     property var parseValueFunction: null // Optional custom parse function
+    property var minValueDisplayFuntion: null //Optional custom minimum value displayed in textbox
 
     function formatValue(val: real): string {
         if (formatValueFunction) {
@@ -47,6 +48,13 @@ ColumnLayout {
             }
         }
         return parseFloat(text);
+    }
+
+    function minValueDisplay(val: real) : real {
+        if (minValueDisplayFuntion){
+            return minValueDisplayFuntion(val);
+        }
+        //Default minimum textbox display function
     }
 
     signal valueModified(real newValue)
