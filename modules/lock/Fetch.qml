@@ -147,6 +147,7 @@ ColumnLayout {
 
         Logo {
             width: height
+            height: height
         }
     }
 

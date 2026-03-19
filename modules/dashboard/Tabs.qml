@@ -52,17 +52,13 @@ Item {
         anchors.top: bar.bottom
         anchors.topMargin: 5
 
-        implicitWidth: {
-            const tab = bar.currentItem;
-            if (tab)
-                return tab.implicitWidth;
-            const width = (root.nonAnimWidth - bar.spacing * (bar.count - 1)) / bar.count;
-            return width;
-        }
+        implicitWidth: bar.currentItem?.implicitWidth ?? 0
         implicitHeight: 3
 
         x: {
             const tab = bar.currentItem;
+            if (!tab)
+                return 0;
             const width = (root.nonAnimWidth - bar.spacing * (bar.count - 1)) / bar.count;
             const tabWidth = tab?.implicitWidth ?? width;
             return width * bar.currentIndex + (width - tabWidth) / 2;

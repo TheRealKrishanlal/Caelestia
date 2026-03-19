@@ -4,9 +4,13 @@ import qs.services
 import qs.config
 import qs.utils
 import QtQuick
+import qs.components
 
 Item {
     id: root
+    
+    implicitWidth: Appearance.font.size.large * 1.2
+    implicitHeight: Appearance.font.size.large * 1.2
 
     implicitWidth: Math.round(Appearance.font.size.large * 1.2)
     implicitHeight: Math.round(Appearance.font.size.large * 1.2)
@@ -29,8 +33,8 @@ Item {
         id: caelestiaLogo
 
         Logo {
-            implicitWidth: Math.round(Appearance.font.size.large * 1.6)
-            implicitHeight: Math.round(Appearance.font.size.large * 1.6)
+            implicitWidth: Appearance.font.size.large * 1.8
+            implicitHeight: Appearance.font.size.large * 1.8
         }
     }
 
@@ -39,7 +43,7 @@ Item {
 
         ColouredIcon {
             source: SysInfo.osLogo
-            implicitSize: Math.round(Appearance.font.size.large * 1.2)
+            implicitSize: Appearance.font.size.large * 1.2
             colour: Colours.palette.m3tertiary
         }
     }

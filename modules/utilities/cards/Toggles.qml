@@ -60,11 +60,11 @@ StyledRect {
             rowModel: root.needExtraRow ? root.quickToggles.slice(0, root.splitIndex) : root.quickToggles
         }
 
-        ToggleRow {
-            visible: root.needExtraRow
-            rowModel: root.needExtraRow ? root.quickToggles.slice(root.splitIndex) : []
-        }
-    }
+            Toggle {
+                icon: "wifi"
+                checked: Nmcli.wifiEnabled
+                onClicked: Nmcli.toggleWifi()
+            }
 
     component ToggleRow: RowLayout {
         property var rowModel: []
